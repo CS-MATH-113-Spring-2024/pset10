@@ -10,9 +10,11 @@
 \SetWatermarkLightness{.95}
 \printanswers
 
-\newcommand\Z{\ensuremath{\mathbb{Z}}}
-\newcommand\R{\ensuremath{\mathbb{R}}}
-\newcommand\Q{\ensuremath{\mathbb{Q}}}
+\newcommand\mbb[1]{\ensuremath{\mathbb{#1}}}
+\newcommand\mcal[1]{\ensuremath{\mathcal{#1}}}
+\newcommand\Z{\ensuremath{\mbb{Z}}}
+\newcommand\R{\ensuremath{\mbb{R}}}
+\newcommand\Q{\ensuremath{\mbb{Q}}}
 
 \title{Problem Set 10: Cardinality Of Sets}
 \author{CS/MATH 113 Discrete Mathematics}
@@ -31,32 +33,32 @@
   \begin{parts}
   \part The set of even integers and the set of odd integers
     \begin{solution}
-      $f(x) = x + 1$
+      $f:\mbb{E}\to\mbb{O},\quad f(x) = x + 1$
     \end{solution}
     
   \part $\Z$ and $S = \{..., \frac{1}{8}, \frac{1}{4}, \frac{1}{2}, 1, 2, 4, 8, 16, ...\}$
     \begin{solution}
-      $f(x) = 2^x$
+      $f:\mbb{Z}\to S,\quad f(x) = 2^x$
     \end{solution}
 
   \part $\Z^+$ and $S = \{2^n : n \in \Z^+\}$
     \begin{solution}
-      $f(n) = 2^n$
+      $f:\mbb{Z}^+\to S,\quad f(n) = 2^n$
     \end{solution}
     
   \part $A = \{3k : k \in \Z\}$ and $B = \{7k : k \in \Z\}$
     \begin{solution}
-      $f(x) = \frac{7}{3}x$
+      $f:A\to B,\quad f(x) = \frac{7}{3}x$
     \end{solution}
     
   \part $\R$ and $S=\{x\in\R\mid x>0 \}$
     \begin{solution}
-      $f(x) = e^x$
+      $f:\mbb{R}\to S,\quad f(x) = e^x$
     \end{solution}
     
   \part $\R$ and $S=\{x\in\R\mid x>\sqrt{2} \}$
     \begin{solution}
-      $f(x) = e^x+\sqrt{2}$
+      $f:\mbb{R}\to S,\quad f(x) = e^x+\sqrt{2}$
     \end{solution}
   \end{parts}
 

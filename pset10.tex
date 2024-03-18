@@ -79,45 +79,70 @@
     \end{solution}
     
   \part The set $A = \{(m,n) \in \Z^+ \times \Z^+ \mid m \leq n\}$ is countably infinite.
-    \begin{solution}
-      We can establish a bijection between $A$ and $\Z^+$, which proves that $A$ is countably infinite.
 
-      Consider the function $f: A \rightarrow \Z^+$ defined as follows:
-      \[ f(m,n) = \frac{1}{2}(m + n - 2)(m + n - 1) + m \]
+    \begin{solution} 
+    We provide a direct proof of the statement, making use of the result that a subset of a countable set is countable.
+    \begin{proof} $A$ is countably infinite.
+      
+      Observe that $A\subseteq \Z^+ \times \Z^+$.\\
+      As shown in the proof that \Q\ is countable, $\Z^+ \times \Z^+$ is countable.\\
+      Therefore, $A$ is countable.\\
+      As $m$ and $n$ in the description of $A$ are unbounded, $A$ is infinite.\\
+      Therefore, $A$ is countably infinite.
+    \end{proof}
+    % We can establish a bijection between $A$ and $\Z^+$, which proves that $A$ is countably infinite.
 
-      To show that this function is
-        one-to-one and onto, we merely need to show that the range
-        of values for x + 1 picks up precisely where the range of
-        values for x left off, i.e., that $f(x-1, 1)+1 = f(1, x)$. Not only would this be one-to-one, it would be onto as well. We have
-       \[f(x - 1, 1) + 1\]
-       \[= \frac{(x-2)(x-1)}{2}+(x-1)+1\]
-        \[= \frac{x^2 - x+2}{2}\]
-        \[= \frac{(x-1)x}{2}+1\]
-        \[= f(1, x)\]
-        Hence, this is a bijection between A and $\Z^+$, meaning A is countably infinite.
+      % Consider the function $f: A \rightarrow \Z^+$ defined as follows:
+      % \[ f(m,n) = \frac{1}{2}(m + n - 2)(m + n - 1) + m \]
+
+      % To show that this function is
+      %   one-to-one and onto, we merely need to show that the range
+      %   of values for x + 1 picks up precisely where the range of
+      %   values for x left off, i.e., that $f(x-1, 1)+1 = f(1, x)$. Not only would this be one-to-one, it would be onto as well. We have
+      %  \[f(x - 1, 1) + 1\]
+      %  \[= \frac{(x-2)(x-1)}{2}+(x-1)+1\]
+      %   \[= \frac{x^2 - x+2}{2}\]
+      %   \[= \frac{(x-1)x}{2}+1\]
+      %   \[= f(1, x)\]
+      %   Hence, this is a bijection between A and $\Z^+$, meaning A is countably infinite.
     \end{solution}
     
   \part The set $\Z \times \Q$ is countably infinite.
     \begin{solution}
-      We know that both $\Z$ and $\Q$ are countably infinite, and we know that the Cartesian
-product of two countably infinite sets is again countably infinite. Therefore $\Z \times \Q$ is
-countably infinite.
+      We provide a direct proof, using the result that the product of countable sets is also countable, as illustrated in the proof that \Q\ is countable.
+
+      \begin{proof}$\Z \times \Q$ is countably infinite.
+        
+        \Z\ and \Q\ are countably infinite.\\
+        Therefore $\Z \times \Q$ is countably infinite.
+      \end{proof}
     \end{solution}
   
       \part If $A \subseteq B$ and there is an injection $g : B \to A$, then $|A| = |B|$.
-    \begin{solution}
-    Suppose there is an injection $g : B \to A$. Then, for each $a \in A$, there exists at most one $b \in B$ such that $g(b) = a$. Since $g$ is an injection, each element $a \in A$ is mapped to by at most one element $b \in B$. Therefore, $|A| \leq |B|$.
+        \begin{solution}
+          We provide a direct proof, first showing that $|B|\le |A|$, then that $|A|\le |B|$. These establish that $|A|=|B|$.
+          \begin{proof} The given statement is true.
+
+            We know that an injection exists from $B$ to $A$.\\
+            Using definition 2 from Section 2.5 of the textbook, $|B|\le |A|$.
+
+            Because $A \subseteq B$, there exists an injection $f : A \to B$, namely $f(a)=a$.\\
+            Then, $|A|\le |B|$.
     
-    On the other hand, since $A \subseteq B$, there exists an injection $f : A \to B$ defined by the inclusion map, where $f(a) = a$ for all $a \in A$. Since $f$ is an injection, each element $a \in A$ is mapped to a distinct element $b = f(a) \in B$. Therefore, $|B| \leq |A|$.
-    
-    Combining both inequalities, we have $|A| = |B|$.
-    \end{solution}
+            Combining both inequalities, we have $|A| = |B|$.
+          \end{proof}
+        \end{solution}
     
     \part If $|A| = |B|$ and $|B| = |C|$, then $|A| = |C|$.
     \begin{solution}
-    By definition, we have bijections $f : A \to B$ and $g : B\to C$ . Similarly, $g \circ f$ is a valid bijection
-    from A to C, as it is the composition of two bijections. Thus, $|A| = |C|$.
-
+          We provide a direct proof, using the results that two sets have the same cardinality iff a bijection exists between them, and that the composition of two bijections is a bijection.
+          \begin{proof} $(|A| = |B| \land |B| = |C|) \implies |A| = |C|$
+            
+            Because $|A|=|B|$, there exists a bijection, $f : A \to B$.\\
+            Similarly, there exists a bijection $g : B\to C$.\\
+            These can be composed to yield, $g \circ f:A\to C$, which is a bijection.\\
+            Thus, $|A| = |C|$.
+          \end{proof}
     \end{solution}
     
     \part If $A$ and $B$ are sets with $|A| = |B|$, then $|\mathcal{P}(A)| = |\mathcal{P}(B)|$.

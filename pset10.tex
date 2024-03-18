@@ -10,7 +10,7 @@
 \printanswers
 
 \newcommand\mbb[1]{\ensuremath{\mathbb{#1}}}
-\newcommand\mcal[1]{\ensuremath{\mathcal{#1}}}
+\newcommand\mcc[1]{\ensuremath{\mathcal{#1}}}
 \newcommand\Z{\ensuremath{\mbb{Z}}}
 \newcommand\R{\ensuremath{\mbb{R}}}
 \newcommand\Q{\ensuremath{\mbb{Q}}}
@@ -81,30 +81,30 @@
   \part The set $A = \{(m,n) \in \Z^+ \times \Z^+ \mid m \leq n\}$ is countably infinite.
 
     \begin{solution} 
-    We provide a direct proof of the statement, making use of the result that a subset of a countable set is countable.
-    \begin{proof} $A$ is countably infinite.
-      
-      Observe that $A\subseteq \Z^+ \times \Z^+$.\\
-      As shown in the proof that \Q\ is countable, $\Z^+ \times \Z^+$ is countable.\\
-      Therefore, $A$ is countable.\\
-      As $m$ and $n$ in the description of $A$ are unbounded, $A$ is infinite.\\
-      Therefore, $A$ is countably infinite.
-    \end{proof}
-    % We can establish a bijection between $A$ and $\Z^+$, which proves that $A$ is countably infinite.
+      We provide a direct proof of the statement, making use of the result that a subset of a countable set is countable.
+      \begin{proof} $A$ is countably infinite.
+        
+        Observe that $A\subseteq \Z^+ \times \Z^+$.\\
+        As shown in the proof that \Q\ is countable, $\Z^+ \times \Z^+$ is countable.\\
+        Therefore, $A$ is countable.\\
+        As $m$ and $n$ in the description of $A$ are unbounded, $A$ is infinite.\\
+        Therefore, $A$ is countably infinite.
+      \end{proof}
+      % We can establish a bijection between $A$ and $\Z^+$, which proves that $A$ is countably infinite.
 
       % Consider the function $f: A \rightarrow \Z^+$ defined as follows:
       % \[ f(m,n) = \frac{1}{2}(m + n - 2)(m + n - 1) + m \]
 
       % To show that this function is
-      %   one-to-one and onto, we merely need to show that the range
-      %   of values for x + 1 picks up precisely where the range of
-      %   values for x left off, i.e., that $f(x-1, 1)+1 = f(1, x)$. Not only would this be one-to-one, it would be onto as well. We have
-      %  \[f(x - 1, 1) + 1\]
-      %  \[= \frac{(x-2)(x-1)}{2}+(x-1)+1\]
-      %   \[= \frac{x^2 - x+2}{2}\]
-      %   \[= \frac{(x-1)x}{2}+1\]
-      %   \[= f(1, x)\]
-      %   Hence, this is a bijection between A and $\Z^+$, meaning A is countably infinite.
+      % one-to-one and onto, we merely need to show that the range
+      % of values for x + 1 picks up precisely where the range of
+      % values for x left off, i.e., that $f(x-1, 1)+1 = f(1, x)$. Not only would this be one-to-one, it would be onto as well. We have
+      % \[f(x - 1, 1) + 1\]
+      % \[= \frac{(x-2)(x-1)}{2}+(x-1)+1\]
+      % \[= \frac{x^2 - x+2}{2}\]
+      % \[= \frac{(x-1)x}{2}+1\]
+      % \[= f(1, x)\]
+      % Hence, this is a bijection between A and $\Z^+$, meaning A is countably infinite.
     \end{solution}
     
   \part The set $\Z \times \Q$ is countably infinite.
@@ -117,44 +117,48 @@
         Therefore $\Z \times \Q$ is countably infinite.
       \end{proof}
     \end{solution}
-  
-      \part If $A \subseteq B$ and there is an injection $g : B \to A$, then $|A| = |B|$.
-        \begin{solution}
-          We provide a direct proof, first showing that $|B|\le |A|$, then that $|A|\le |B|$. These establish that $|A|=|B|$.
-          \begin{proof} The given statement is true.
-
-            We know that an injection exists from $B$ to $A$.\\
-            Using definition 2 from Section 2.5 of the textbook, $|B|\le |A|$.
-
-            Because $A \subseteq B$, there exists an injection $f : A \to B$, namely $f(a)=a$.\\
-            Then, $|A|\le |B|$.
-    
-            Combining both inequalities, we have $|A| = |B|$.
-          \end{proof}
-        \end{solution}
-    
-    \part If $|A| = |B|$ and $|B| = |C|$, then $|A| = |C|$.
+\newpage    
+  \part If $A \subseteq B$ and there is an injection $g : B \to A$, then $|A| = |B|$.
     \begin{solution}
-          We provide a direct proof, using the results that two sets have the same cardinality iff a bijection exists between them, and that the composition of two bijections is a bijection.
-          \begin{proof} $(|A| = |B| \land |B| = |C|) \implies |A| = |C|$
-            
-            Because $|A|=|B|$, there exists a bijection, $f : A \to B$.\\
-            Similarly, there exists a bijection $g : B\to C$.\\
-            These can be composed to yield, $g \circ f:A\to C$, which is a bijection.\\
-            Thus, $|A| = |C|$.
-          \end{proof}
+      We provide a direct proof, first showing that $|B|\le |A|$, then that $|A|\le |B|$. These establish that $|A|=|B|$.
+      \begin{proof} The given statement is true.
+
+        We know that an injection exists from $B$ to $A$.\\
+        Using definition 2 from Section 2.5 of the textbook, $|B|\le |A|$.
+
+        Because $A \subseteq B$, there exists an injection $f : A \to B$, namely $f(a)=a$.\\
+        Then, $|A|\le |B|$.
+        
+        Combining both inequalities, we have $|A| = |B|$.
+      \end{proof}
     \end{solution}
     
-    \part If $A$ and $B$ are sets with $|A| = |B|$, then $|\mathcal{P}(A)| = |\mathcal{P}(B)|$.
+  \part If $|A| = |B|$ and $|B| = |C|$, then $|A| = |C|$.
     \begin{solution}
-    Let $|A| = |B| = n$. Consider a bijection $f: A \to B$. Then, for each subset $X \subseteq A$, the set $f(X) = \{f(x) : x \in X\}$ is a subset of $B$. 
-    
-    Define a function $g: \mathcal{P}(A) \to \mathcal{P}(B)$ as follows:
-    \[ g(X) = f(X) \]
-    
-    Clearly, $g$ is a bijection, since $f$ is a bijection and $g$ simply maps each subset of $A$ to its corresponding subset of $B$. Therefore, $|\mathcal{P}(A)| = |\mathcal{P}(B)|$.
+      We provide a direct proof, using the results that two sets have the same cardinality iff a bijection exists between them, and that the composition of two bijections is a bijection.
+      \begin{proof} $((|A| = |B|) \land (|B| = |C|)) \implies (|A| = |C|)$
+        
+        Because $|A|=|B|$, there exists a bijection, $f : A \to B$.\\
+        Similarly, there exists a bijection $g : B\to C$.\\
+        These can be composed to yield, $g \circ f:A\to C$, which is a bijection.\\
+        Thus, $|A| = |C|$.
+      \end{proof}
     \end{solution}
-\end{parts}
+    
+  \part If $A$ and $B$ are sets with $|A| = |B|$, then $|\mcc{P}(A)| = |\mcc{P}(B)|$.
+    \begin{solution}
+      We provide a direct proof, using the results that two sets have the same cardinality iff a bijection exists between them.
+
+      \begin{proof} $(|A| = |B|)\implies (\mcc{P}(A)| = |\mcc{P}(B)|)$
+
+        Consider a bijection, $f:A\to B$.\\
+        Then, for a subset $X$ of $A$, we have that $f(X)$ is a subset of $B$.\\
+        Consider a function, $g:\mcc{P}(A) \to \mcc{P}(B)$ such that $g(X) = f(X)$.\\
+        Because $f$ is a bijection, so is $g$.\\
+        Therefore, $|\mathcal{P}(A)| = |\mathcal{P}(B)|$.
+      \end{proof}
+    \end{solution}
+  \end{parts}
 
   
 \end{questions}

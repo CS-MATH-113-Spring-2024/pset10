@@ -4,6 +4,12 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 
+\usepackage{draftwatermark}
+\SetWatermarkText{Sample Solution}
+\SetWatermarkScale{3}
+\SetWatermarkLightness{.95}
+\printanswers
+
 \newcommand\Z{\ensuremath{\mathbb{Z}}}
 \newcommand\R{\ensuremath{\mathbb{R}}}
 \newcommand\Q{\ensuremath{\mathbb{Q}}}
@@ -25,32 +31,32 @@
   \begin{parts}
   \part The set of even integers and the set of odd integers
     \begin{solution}
-      % Enter your solution here.
+      $f(x) = x + 1$
     \end{solution}
     
   \part $\Z$ and $S = \{..., \frac{1}{8}, \frac{1}{4}, \frac{1}{2}, 1, 2, 4, 8, 16, ...\}$
     \begin{solution}
-      % Enter your solution here.
+      $f(x) = 2^x$
     \end{solution}
 
   \part $\Z^+$ and $S = \{2^n : n \in \Z^+\}$
     \begin{solution}
-      % Enter your solution here.
+      $f(n) = 2^n$
     \end{solution}
     
   \part $A = \{3k : k \in \Z\}$ and $B = \{7k : k \in \Z\}$
     \begin{solution}
-      % Enter your solution here.
+      $f(x) = \frac{7}{3}x$
     \end{solution}
     
   \part $\R$ and $S=\{x\in\R\mid x>0 \}$
     \begin{solution}
-      % Enter your solution here.
+      $f(x) = e^x$
     \end{solution}
     
   \part $\R$ and $S=\{x\in\R\mid x>\sqrt{2} \}$
     \begin{solution}
-      % Enter your solution here.
+      $f(x) = e^x+\sqrt{2}$
     \end{solution}
   \end{parts}
 
@@ -58,33 +64,70 @@
   \begin{parts}
   \part If $A = \{X \subseteq \Z^+ \mid X \text{ is finite}\}$, then $|A| = \aleph_0$.
     \begin{solution}
-      % Enter your solution here.
+      We can prove this statement by showing a bijection between $A$ and $\Z^+$, implying that they have the same cardinality.
+
+      Consider the function $f: A \rightarrow \Z^+$ defined as follows:
+      \[ f(X) = |X| \]
+
+      Where $|X|$ denotes the cardinality of the set $X$. This function maps each finite subset of $\Z^+$ to its cardinality, which is a positive integer. 
+
+      This function is injective because distinct finite sets have distinct cardinalities. It is also surjective because every positive integer $n$ can be the cardinality of some finite subset of $\Z^+$ (e.g., the set $\{1, 2, \ldots, n\}$).
+
+      Therefore, $f$ is a bijection between $A$ and $\Z^+$, implying that $|A| = |\Z^+| = \aleph_0$.
     \end{solution}
   \part The set $A = \{(m,n) \in \Z^+ \times \Z^+ \mid m \leq n\}$ is countably infinite.
-
     \begin{solution}
-      % Enter your solution here.
+      We can establish a bijection between $A$ and $\Z^+$, which proves that $A$ is countably infinite.
+
+      Consider the function $f: A \rightarrow \Z^+$ defined as follows:
+      \[ f(m,n) = \frac{1}{2}(m + n - 2)(m + n - 1) + m \]
+
+      To show that this function is
+        one-to-one and onto, we merely need to show that the range
+        of values for x + 1 picks up precisely where the range of
+        values for x left off, i.e., that $f(x-1, 1)+1 = f(1, x)$. Not only would this be one-to-one, it would be onto as well. We have
+       \[f(x - 1, 1) + 1\]
+       \[= \frac{(x-2)(x-1)}{2}+(x-1)+1\]
+        \[= \frac{x^2 - x+2}{2}\]
+        \[= \frac{(x-1)x}{2}+1\]
+        \[= f(1, x)\]
+        Hence, this is a bijection between A and $\Z^+$, meaning A is countably infinite.
     \end{solution}
+    
   \part The set $\Z \times \Q$ is countably infinite.
     \begin{solution}
-      % Enter your solution here.
+      We know that both $\Z$ and $\Q$ are countably infinite, and we know that the Cartesian
+product of two countably infinite sets is again countably infinite. Therefore $\Z \times \Q$ is
+countably infinite.
     \end{solution}
+  
+      \part If $A \subseteq B$ and there is an injection $g : B \to A$, then $|A| = |B|$.
+    \begin{solution}
+    Suppose there is an injection $g : B \to A$. Then, for each $a \in A$, there exists at most one $b \in B$ such that $g(b) = a$. Since $g$ is an injection, each element $a \in A$ is mapped to by at most one element $b \in B$. Therefore, $|A| \leq |B|$.
+    
+    On the other hand, since $A \subseteq B$, there exists an injection $f : A \to B$ defined by the inclusion map, where $f(a) = a$ for all $a \in A$. Since $f$ is an injection, each element $a \in A$ is mapped to a distinct element $b = f(a) \in B$. Therefore, $|B| \leq |A|$.
+    
+    Combining both inequalities, we have $|A| = |B|$.
+    \end{solution}
+    
+    \part If $|A| = |B|$ and $|B| = |C|$, then $|A| = |C|$.
+    \begin{solution}
+    By definition, we have bijections $f : A \to B$ and $g : B\to C$ . Similarly, $g \circ f$ is a valid bijection
+    from A to C, as it is the composition of two bijections. Thus, $|A| = |C|$.
 
-  \part If $A \subseteq B$ and there is an injection $g : B \to A$, then $|A| = |B|$.
-    \begin{solution}
-      % Enter your solution here.
     \end{solution}
     
-  \part  If $|A| = |B|$ and $|B| = |C|$, then $|A| = |C|$.
+    \part If $A$ and $B$ are sets with $|A| = |B|$, then $|\mathcal{P}(A)| = |\mathcal{P}(B)|$.
     \begin{solution}
-      % Enter your solution here.
-    \end{solution}
+    Let $|A| = |B| = n$. Consider a bijection $f: A \to B$. Then, for each subset $X \subseteq A$, the set $f(X) = \{f(x) : x \in X\}$ is a subset of $B$. 
     
-  \part If $A$ and $B$ are sets with $|A| = |B|$, then $|\mathcal{P}(A)| = |\mathcal{P}(B)|$.
-    \begin{solution}
-      % Enter your solution here.
+    Define a function $g: \mathcal{P}(A) \to \mathcal{P}(B)$ as follows:
+    \[ g(X) = f(X) \]
+    
+    Clearly, $g$ is a bijection, since $f$ is a bijection and $g$ simply maps each subset of $A$ to its corresponding subset of $B$. Therefore, $|\mathcal{P}(A)| = |\mathcal{P}(B)|$.
     \end{solution}
-  \end{parts}
+\end{parts}
+
   
 \end{questions}
 \end{document}

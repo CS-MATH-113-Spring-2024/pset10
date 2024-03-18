@@ -1,8 +1,7 @@
 \documentclass[a4paper]{exam}
 
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
 \usepackage{geometry}
-\usepackage{amsmath}
-\usepackage{amsfonts}
 
 \usepackage{draftwatermark}
 \SetWatermarkText{Sample Solution}
@@ -62,21 +61,23 @@
     \end{solution}
   \end{parts}
 
+  \newpage
 \question Prove or disprove each of the following statements.
   \begin{parts}
   \part If $A = \{X \subseteq \Z^+ \mid X \text{ is finite}\}$, then $|A| = \aleph_0$.
     \begin{solution}
-      We can prove this statement by showing a bijection between $A$ and $\Z^+$, implying that they have the same cardinality.
+      We provide a direct proof of the statement, based on enumerating subsets of a given cardinality. The argument uses the one used to prove that $\mbb{Q}$ is countable.
 
-      Consider the function $f: A \rightarrow \Z^+$ defined as follows:
-      \[ f(X) = |X| \]
-
-      Where $|X|$ denotes the cardinality of the set $X$. This function maps each finite subset of $\Z^+$ to its cardinality, which is a positive integer. 
-
-      This function is injective because distinct finite sets have distinct cardinalities. It is also surjective because every positive integer $n$ can be the cardinality of some finite subset of $\Z^+$ (e.g., the set $\{1, 2, \ldots, n\}$).
-
-      Therefore, $f$ is a bijection between $A$ and $\Z^+$, implying that $|A| = |\Z^+| = \aleph_0$.
+      \begin{proof} $A$ is countable.
+        
+        Observe that all the subsets of $\Z^+$ with a given cardinality, $n$, can be listed in some order, i.e., as a sequence.\\
+        That is, there are countably many subsets of $\Z^+$ of a given cardinality.\\
+        Consider a matrix in which the $i$-th row, $i\ge 0$, contains all the subsets of $\Z^+$ whose cardinality is $i$.\\
+        This matrix contains all the elements of $A$.\\
+        $A$ is countable using the same argument as the one used to prove that \Q\ is countable.
+      \end{proof}
     \end{solution}
+    
   \part The set $A = \{(m,n) \in \Z^+ \times \Z^+ \mid m \leq n\}$ is countably infinite.
     \begin{solution}
       We can establish a bijection between $A$ and $\Z^+$, which proves that $A$ is countably infinite.
